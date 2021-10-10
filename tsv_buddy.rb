@@ -19,7 +19,7 @@ module TsvBuddy
   # to_tsv: converts @data into tsv string
   # returns: String in TSV format
   def to_tsv
-    headers = @data[0].each_key.map { |key| key }
+    headers = @data[0].each_key.map { |key| key }.join(TAB)
     rows = @data.map { |row| NEWLINE + row.values.join(TAB)}
     [headers, rows, NEWLINE].join
   end
